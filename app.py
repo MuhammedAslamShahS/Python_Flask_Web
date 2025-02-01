@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request
+import os
 app = Flask(__name__)
 
+
+# for app configuration
+app.config['UPLOAD_PATH'] = 'static/images'
 
 # Mian Page / Home page
 @app.route('/')
@@ -16,6 +20,15 @@ def register():
         email = request.form.get('email')
         return render_template('register.html', name=name, number=number, email=email)
     return render_template('index.html')
+
+# Upload File
+@app.route('/upload', methods = ['POST'])
+def upload():
+    file = request.files['file']
+    file.save(os.path.join(app.config['UPLOAD_PATH'], file.filename))
+    return 'uploaded successfully'
+
+
 
 # About page
 @app.route('/about')
