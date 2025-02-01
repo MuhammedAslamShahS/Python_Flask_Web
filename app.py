@@ -38,5 +38,8 @@ def contact():
     return "This is Contact Page"
 
 
+# Add URL RULE
+app.add_url_rule('/home', 'home', home)
+
 if __name__ == '__main__':
     app.run(debug=True) 
