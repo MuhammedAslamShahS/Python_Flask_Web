@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Registration Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
         .container {
             max-width: 400px;
             margin: 50px auto;
-            background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -60,6 +59,10 @@
 
             <input type="submit" value="Register">
         </form>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius hic libero commodi tempore, facere nesciunt dicta velit ex aliquam. Tenetur sequi quibusdam rerum officia dicta corrupti dolorum consequatur dolores atque!
+        </p>
+        <img src="{{ url_for('static', filename = 'images/Untitled design.png') }}" alt="">
     </div>
 
 </body>
