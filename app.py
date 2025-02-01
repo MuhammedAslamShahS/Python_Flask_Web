@@ -55,6 +55,20 @@ def contact():
     return render_template('contact.html')
 
 
+# Login page
+@app.route('/login', methods = ['GET','POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['name'] == 'user' and request.form['password'] == 'shah':
+            return render_template('dashboard.html')
+        else:
+            error = "Wrong user name or Password"
+            return render_template('login.html', error = error)
+    else:
+         return render_template('login.html')
+
+
 # Add URL RULE
 app.add_url_rule('/home', 'home', home)
 

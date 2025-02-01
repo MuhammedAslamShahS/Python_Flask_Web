@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+<h1>Login page</h1>
+
+<form action="{{ url_for('login') }}" method="POST">
+    User Name : <input type="text" name="name" required>
+    <hr>
+    Password : <input type="password" name="password" required>
+    <hr>
+    <input type="submit" value="Login">
+</form>
+
+{% if error %}
+<p style="color: red;">Wrong user name or Password</p>
+{% endif %}  <!-- Close the if block here -->
+
+{% endblock %}
