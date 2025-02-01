@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
@@ -6,21 +6,21 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Hello world \n This is Home page"
+    return render_template('index.html')
 
 
 # About page
 
 @app.route('/about')
 def about():
-    return "This is About Page"
+    return render_template('about.html')
 
 
 # Product page
 
 @app.route('/product')
 def product():
-    return "This is Product Page"
+    return render_template('product.html')
 
 
 
@@ -28,14 +28,14 @@ def product():
 
 @app.route('/product/laptop')
 def laptop():
-    return "This is Product/laptop Page"
+    return render_template('product.html')
 
 
 # Contact page
 
 @app.route('/contact')
 def contact():
-    return "This is Contact Page"
+    return render_template('contact.html')
 
 
 # Add URL RULE
